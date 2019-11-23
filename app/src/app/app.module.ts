@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatIconModule } from '@angular/material';
 import { ResumenEmpresaComponent } from './resumen-empresa/resumen-empresa.component';
+import { ListaPersonasComponent } from './lista-personas/lista-personas.component';
+import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResumenEmpresaComponent
+    ResumenEmpresaComponent,
+    ListaPersonasComponent,
+    DetallePersonaComponent
   ],
   imports: [
     BrowserModule,

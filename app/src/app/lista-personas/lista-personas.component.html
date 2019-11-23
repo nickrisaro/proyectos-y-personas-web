@@ -1,0 +1,14 @@
+<div class="contenedor-personas">
+    <mat-card class="personas-card">
+        <mat-card-title>Personas</mat-card-title>
+        <mat-card-content>
+            <ul class="personas">
+                <li *ngFor="let persona of personas"
+                [class.selected]="persona === personaSeleccionada"
+                (click)="onSelect(persona)">{{persona.nombre}}</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+
+    <app-detalle-persona [persona]="personaSeleccionada"></app-detalle-persona>
+</div>

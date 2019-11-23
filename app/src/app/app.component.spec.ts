@@ -2,6 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ResumenEmpresaComponent } from './resumen-empresa/resumen-empresa.component'
+import { ListaPersonasComponent } from './lista-personas/lista-personas.component'
+import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
 
 import {
   MatToolbarModule,
@@ -20,6 +22,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         ResumenEmpresaComponent,
+        ListaPersonasComponent,
+        DetallePersonaComponent,
         AppComponent
       ],
     }).compileComponents();
