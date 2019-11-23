@@ -1,5 +1,8 @@
 <mat-card *ngIf="persona" class="persona-card">
     <mat-card-title>{{persona.nombre}}</mat-card-title>
     <mat-card-content>
+        <p><b>Habilidad dura:</b> {{persona.habilidadDuraDescripcion()}}</p>
+        <p><b>Habilidad blanda:</b> {{persona.habilidadBlandaDescripcion()}}</p>
+        <p><b>Seniority:</b> {{persona.seniorityDescripcion()}}</p>
     </mat-card-content>
 </mat-card>

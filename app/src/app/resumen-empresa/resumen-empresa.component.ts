@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Resumen} from '../resumen'
 
 @Component({
@@ -8,14 +8,21 @@ import {Resumen} from '../resumen'
 })
 export class ResumenEmpresaComponent implements OnInit {
 
+  @Input() mostrarPersonas;
+  @Output() mostrarPersonasChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  resumen: Resumen = {
+    personas: 2,
+    proyectos: 2
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  resumen: Resumen = {
-    personas: 10,
-    proyectos: 2
+  togglePersonas(): void {
+    this.mostrarPersonas = !this.mostrarPersonas;
+    this.mostrarPersonasChange.emit(this.mostrarPersonas);
   }
-
 }

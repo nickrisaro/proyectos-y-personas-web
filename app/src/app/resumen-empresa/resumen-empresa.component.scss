@@ -1,15 +1,19 @@
 .resumen-card {
-  max-width: 400px;
+  max-width: 300px;
   min-width: 175px;
   margin: 10px;
 }
 
 .descripcion {
-    padding: 10px;
+  padding: 10px;
 }
 
 .contenedor-descripcion {
-    margin: 10px;
-    display:flex;
-    align-items:center;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.ver-detalle {
+  cursor: pointer;
 }

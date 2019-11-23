@@ -33,11 +33,11 @@ describe('ResumenEmpresaComponent', () => {
 
   it(`should have a paragraph with the persons`, () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('#personas').textContent).toContain('Cantidad de personas 10');
+    expect(compiled.querySelector('#personas').textContent).toContain('Cantidad de personas: 2');
   });
 
   it(`should have a paragraph with the projects`, () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('#proyectos').textContent).toContain('Cantidad de proyectos 2');
+    expect(compiled.querySelector('#proyectos').textContent).toContain('Cantidad de proyectos: 2');
   });
 });

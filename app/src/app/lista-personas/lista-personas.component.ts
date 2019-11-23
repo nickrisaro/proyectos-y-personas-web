@@ -8,7 +8,7 @@ import { Persona } from '../persona';
 })
 export class ListaPersonasComponent implements OnInit {
 
-  personas: Persona[] = [{nombre: "Nayla"}, {nombre: "Santiago"}]
+  personas: Persona[] = [new Persona("Nayla", 0, 0, 3), new Persona("Santiago", 2, 2, 3)]
   personaSeleccionada: Persona;
 
   constructor() { }

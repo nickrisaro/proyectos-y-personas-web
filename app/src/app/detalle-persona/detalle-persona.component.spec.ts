@@ -25,8 +25,7 @@ describe('DetallePersonaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DetallePersonaComponent);
     component = fixture.componentInstance;
-    component.persona = new Persona();
-    component.persona.nombre = "Santiago";
+    component.persona = new Persona("Santiago", 2, 2, 3)
     fixture.detectChanges();
   });
 

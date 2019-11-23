@@ -10,6 +10,7 @@ import {
   MatIconModule,
   MatCardModule
 } from '@angular/material';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -46,5 +47,17 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#pyp-toolbar').textContent).toContain('Proyectos y Personas');
+  });
+
+  it(`should show persons info on click`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const item= fixture.debugElement.query(By.css('#personas'));
+    item.nativeElement.click();
+    fixture.detectChanges();
+
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.personas-card')).toBeTruthy();
+
   });
 });

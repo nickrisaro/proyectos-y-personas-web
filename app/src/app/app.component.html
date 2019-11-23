@@ -2,9 +2,9 @@
   <span>{{title}}</span>
 </mat-toolbar>
 
-<div class="mat-app-background basic-container">
-  <app-resumen-empresa></app-resumen-empresa>
-  <app-lista-personas></app-lista-personas>
+<div class="mat-app-background basic-container contenedor-principal">
+  <app-resumen-empresa [mostrarPersonas]="mostrarPersonas" (mostrarPersonasChange)="this.mostrarPersonas= $event"></app-resumen-empresa>
+  <app-lista-personas *ngIf="mostrarPersonas"></app-lista-personas>
 </div>
 
 <router-outlet></router-outlet>
