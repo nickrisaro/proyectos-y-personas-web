@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona';
+import { PersonasService } from '../personas.service';
 
 @Component({
   selector: 'app-lista-personas',
@@ -8,12 +9,18 @@ import { Persona } from '../persona';
 })
 export class ListaPersonasComponent implements OnInit {
 
-  personas: Persona[] = [new Persona("Nayla", 0, 0, 3), new Persona("Santiago", 2, 2, 3)]
+  personas: Persona[];
+
   personaSeleccionada: Persona;
 
-  constructor() { }
+  constructor(private personaService: PersonasService) { }
 
-  ngOnInit() {
+  ngOnInit() {;
+    this.getPersonas()
+  }
+
+  getPersonas() : void {
+    this.personaService.getPersonas().subscribe(personas => this.personas = personas);
   }
 
   onSelect(personaSeleccionada: Persona): void {

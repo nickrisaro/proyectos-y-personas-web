@@ -7,6 +7,7 @@ import {
   MatCardModule, MatIconModule
 } from '@angular/material';
 
+
 describe('DetallePersonaComponent', () => {
   let component: DetallePersonaComponent;
   let fixture: ComponentFixture<DetallePersonaComponent>;
@@ -20,13 +21,20 @@ describe('DetallePersonaComponent', () => {
       declarations: [ DetallePersonaComponent ]
     })
     .compileComponents();
+
+    fixture = TestBed.createComponent(DetallePersonaComponent);
+    component = fixture.componentInstance;
+    component.persona = new Persona();
+    component.persona.nombre = "Santiago";
+    component.persona.hardSkill = 2;
+    component.persona.softSkill = 2;
+    component.persona.seniority = 3;
+    component.persona.sueldo = 75000;
+
+    fixture.detectChanges();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetallePersonaComponent);
-    component = fixture.componentInstance;
-    component.persona = new Persona("Santiago", 2, 2, 3)
-    fixture.detectChanges();
   });
 
   it('should create', () => {

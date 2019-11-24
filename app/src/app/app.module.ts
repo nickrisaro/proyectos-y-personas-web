@@ -8,6 +8,7 @@ import { MatToolbarModule, MatCardModule, MatIconModule } from '@angular/materia
 import { ResumenEmpresaComponent } from './resumen-empresa/resumen-empresa.component';
 import { ListaPersonasComponent } from './lista-personas/lista-personas.component';
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DetallePersonaComponent } from './detalle-persona/detalle-persona.compo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatCardModule,
     MatIconModule

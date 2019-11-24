@@ -1,33 +1,40 @@
 export class Persona {
     nombre: string;
-    habilidadDura: number;
-    habilidadBlanda: number;
+    sueldo: number;
+    hardSkill: number;
+    softSkill: number;
     seniority: number;
 
-    constructor(nombre: string, habilidadDura: number, habilidadBlanda: number, seniority: number) {
-        this.nombre = nombre;
-        this.habilidadDura = habilidadDura;
-        this.habilidadBlanda = habilidadBlanda;
-        this.seniority = seniority;
+    constructor(/*nombre: string, sueldo: number, hardSkill: number, habilidadBlanda: number, seniority: number*/) {
+        // this.nombre = nombre;
+        // this.sueldo = sueldo;
+        // this.hardSkill = hardSkill;
+        // this.habilidadBlanda = habilidadBlanda;
+        // this.seniority = seniority;
     }
 
-    public habilidadDuraDescripcion() : string {
-        switch (this.habilidadDura) {
+    deserialize(input: any): this {
+        Object.assign(this, input);
+        return this;
+    }
+
+    public habilidadDuraDescripcion(): string {
+        switch (this.hardSkill) {
             case 0: return "Dessarrollo";
             case 1: return "Diseño";
             case 2: return "Operaciones";
         }
     }
 
-    public habilidadBlandaDescripcion() : string {
-        switch (this.habilidadBlanda) {
+    public habilidadBlandaDescripcion(): string {
+        switch (this.softSkill) {
             case 0: return "Negociación";
             case 1: return "Mentoreo";
             case 2: return "Investigación";
         }
     }
 
-    public seniorityDescripcion() : string {
+    public seniorityDescripcion(): string {
         switch (this.seniority) {
             case 1: return "Junior";
             case 2: return "SemiSenior";

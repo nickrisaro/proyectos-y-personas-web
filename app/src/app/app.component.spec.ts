@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ResumenEmpresaComponent } from './resumen-empresa/resumen-empresa.component'
 import { ListaPersonasComponent } from './lista-personas/lista-personas.component'
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import {
   MatToolbarModule,
@@ -11,6 +12,7 @@ import {
   MatCardModule
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
+import { PersonasService } from './personas.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,8 +21,10 @@ describe('AppComponent', () => {
         MatToolbarModule,
         MatCardModule,
         MatIconModule,
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ],
+      providers: [PersonasService],
       declarations: [
         ResumenEmpresaComponent,
         ListaPersonasComponent,
