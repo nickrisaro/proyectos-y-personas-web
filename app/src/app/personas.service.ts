@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { map} from 'rxjs/operators';
 import { Persona } from './persona';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,4 @@ export class PersonasService {
     );
   }
 
-  log(message: string): void {
-    console.log(message);
-  }
 }

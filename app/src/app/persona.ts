@@ -5,14 +5,6 @@ export class Persona {
     softSkill: number;
     seniority: number;
 
-    constructor(/*nombre: string, sueldo: number, hardSkill: number, habilidadBlanda: number, seniority: number*/) {
-        // this.nombre = nombre;
-        // this.sueldo = sueldo;
-        // this.hardSkill = hardSkill;
-        // this.habilidadBlanda = habilidadBlanda;
-        // this.seniority = seniority;
-    }
-
     deserialize(input: any): this {
         Object.assign(this, input);
         return this;
@@ -41,11 +33,4 @@ export class Persona {
             case 3: return "Senior";
         }
     }
-    /*
-
-Seniority
-	Junior      1
-	SemiSenior  2
-	Senior      3
-    */
 }

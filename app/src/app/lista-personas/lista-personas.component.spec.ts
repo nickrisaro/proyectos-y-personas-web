@@ -25,7 +25,13 @@ class MockPersonaService extends PersonasService {
     persona2.softSkill = 0;
     persona2.seniority = 1;
     persona2.sueldo = 75000;
-    const personasEsperadas = [persona, persona2];
+    const persona3 = new Persona();
+    persona3.nombre = "Ariel";
+    persona3.hardSkill = 0;
+    persona3.softSkill = 1;
+    persona3.seniority = 2;
+    persona3.sueldo = 75000;
+    const personasEsperadas = [persona, persona2, persona3];
 
     return of(personasEsperadas)
   }
@@ -62,12 +68,13 @@ describe('ListaPersonasComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show 2 persons', (() => {
+  it('should show 3 persons', (() => {
 
     const items = fixture.debugElement.queryAll(By.css('.personas li'));
-    expect(items.length).toBe(2)
+    expect(items.length).toBe(3)
     expect(items[0].nativeElement.textContent).toContain('Nayla');
     expect(items[1].nativeElement.textContent).toContain('Santiago');
+    expect(items[2].nativeElement.textContent).toContain('Ariel');
     fixture.whenStable().then(() => {
 
     });
@@ -80,5 +87,11 @@ describe('ListaPersonasComponent', () => {
 
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.persona-card')).toBeTruthy();
+    expect(compiled.querySelector('.nombre-persona').textContent).toContain('Nayla');
+
+    items[2].nativeElement.click();
+    fixture.detectChanges();
+    expect(compiled.querySelector('.persona-card')).toBeTruthy();
+    expect(compiled.querySelector('.nombre-persona').textContent).toContain('Ariel');
   });
 });
