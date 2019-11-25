@@ -1,0 +1,13 @@
+<div class="contenedor-proyectos">
+    <mat-card class="proyectos-card">
+        <mat-card-title>Proyectos</mat-card-title>
+        <mat-card-content>
+            <ul class="proyectos">
+                <li *ngFor="let proyecto of proyectos" [class.selected]="proyecto === proyectoSeleccionado"
+                    (click)="onSelect(proyecto)">{{proyecto.nombre}}</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+
+    <app-detalle-proyecto [proyecto]="proyectoSeleccionado"></app-detalle-proyecto>
+</div>

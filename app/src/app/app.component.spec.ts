@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { ResumenEmpresaComponent } from './resumen-empresa/resumen-empresa.component'
 import { ListaPersonasComponent } from './lista-personas/lista-personas.component'
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
+import { ListaProyectosComponent } from './lista-proyectos/lista-proyectos.component'
+import { DetalleProyectoComponent } from './detalle-proyecto/detalle-proyecto.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import {
@@ -13,6 +15,7 @@ import {
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { PersonasService } from './personas.service';
+import { ProyectosService } from './proyectos.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -24,11 +27,13 @@ describe('AppComponent', () => {
         RouterTestingModule,
         HttpClientTestingModule
       ],
-      providers: [PersonasService],
+      providers: [PersonasService, ProyectosService],
       declarations: [
         ResumenEmpresaComponent,
         ListaPersonasComponent,
         DetallePersonaComponent,
+        ListaProyectosComponent,
+        DetalleProyectoComponent,
         AppComponent
       ],
     }).compileComponents();
@@ -62,6 +67,18 @@ describe('AppComponent', () => {
 
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.personas-card')).toBeTruthy();
+
+  });
+
+  it(`should show projects info on click`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+
+    const item= fixture.debugElement.query(By.css('#proyectos'));
+    item.nativeElement.click();
+    fixture.detectChanges();
+
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.proyectos-card')).toBeTruthy();
 
   });
 });

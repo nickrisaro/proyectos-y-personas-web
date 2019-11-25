@@ -2,6 +2,6 @@
     <mat-card-title>Resumen</mat-card-title>
     <mat-card-content>
         <div class="contenedor-descripcion" (click)="togglePersonas()"><mat-icon color="accent">group</mat-icon> <span id="personas" class="descripcion"><b>Cantidad de personas: </b>{{resumen.personas}}</span> <mat-icon class="ver-detalle">keyboard_arrow_right</mat-icon></div>
-        <div class="contenedor-descripcion"><mat-icon color="accent">list</mat-icon> <span id="proyectos" class="descripcion"><b>Cantidad de proyectos: </b>{{resumen.proyectos}}</span></div>
+        <div class="contenedor-descripcion" (click)="toggleProyectos()"><mat-icon color="accent">list</mat-icon> <span id="proyectos" class="descripcion"><b>Cantidad de proyectos: </b>{{resumen.proyectos}}</span> <mat-icon class="ver-detalle">keyboard_arrow_right</mat-icon></div>
     </mat-card-content>
 </mat-card>

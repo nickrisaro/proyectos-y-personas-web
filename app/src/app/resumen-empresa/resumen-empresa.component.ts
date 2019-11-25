@@ -11,6 +11,9 @@ export class ResumenEmpresaComponent implements OnInit {
   @Input() mostrarPersonas;
   @Output() mostrarPersonasChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Input() mostrarProyectos;
+  @Output() mostrarProyectosChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   resumen: Resumen = {
     personas: 2,
     proyectos: 2
@@ -25,4 +28,10 @@ export class ResumenEmpresaComponent implements OnInit {
     this.mostrarPersonas = !this.mostrarPersonas;
     this.mostrarPersonasChange.emit(this.mostrarPersonas);
   }
+
+  toggleProyectos(): void {
+    this.mostrarProyectos = !this.mostrarProyectos;
+    this.mostrarProyectosChange.emit(this.mostrarProyectos);
+  }
+
 }

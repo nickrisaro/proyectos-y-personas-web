@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'Proyectos y Personas';
 
   mostrarPersonas = false;
+  mostrarProyectos = false;
 }

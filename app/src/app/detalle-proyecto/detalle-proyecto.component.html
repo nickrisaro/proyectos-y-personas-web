@@ -1,0 +1,9 @@
+<mat-card *ngIf="proyecto" class="proyecto-card">
+        <mat-card-title>{{proyecto.nombre}}</mat-card-title>
+        <mat-card-content>
+            <p><b>Presupuesto:</b> ${{proyecto.presupuesto}}</p>
+            <p><b>Desarrollo:</b> {{proyecto.personasDesarrolloNecesarias()}} personas(s)</p>
+            <p><b>Diseño:</b> {{proyecto.personasDisenioNecesarias()}} personas(s)</p>
+            <p><b>Operaciones:</b> {{proyecto.personasOperacionesNecesarias()}} personas(s)</p>
+        </mat-card-content>
+    </mat-card>

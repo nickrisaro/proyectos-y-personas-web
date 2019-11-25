@@ -9,13 +9,17 @@ import { ResumenEmpresaComponent } from './resumen-empresa/resumen-empresa.compo
 import { ListaPersonasComponent } from './lista-personas/lista-personas.component';
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { ListaProyectosComponent } from './lista-proyectos/lista-proyectos.component';
+import { DetalleProyectoComponent } from './detalle-proyecto/detalle-proyecto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResumenEmpresaComponent,
     ListaPersonasComponent,
-    DetallePersonaComponent
+    DetallePersonaComponent,
+    ListaProyectosComponent,
+    DetalleProyectoComponent
   ],
   imports: [
     BrowserModule,

@@ -3,8 +3,13 @@
 </mat-toolbar>
 
 <div class="mat-app-background basic-container contenedor-principal">
-  <app-resumen-empresa [mostrarPersonas]="mostrarPersonas" (mostrarPersonasChange)="this.mostrarPersonas= $event"></app-resumen-empresa>
-  <app-lista-personas *ngIf="mostrarPersonas"></app-lista-personas>
+  <app-resumen-empresa [mostrarPersonas]="mostrarPersonas" (mostrarPersonasChange)="this.mostrarPersonas= $event"
+                       [mostrarProyectos]="mostrarProyectos" (mostrarProyectosChange)="this.mostrarProyectos= $event">
+  </app-resumen-empresa>
+  <div>
+    <app-lista-personas *ngIf="mostrarPersonas"></app-lista-personas>
+    <app-lista-proyectos *ngIf="mostrarProyectos"></app-lista-proyectos>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

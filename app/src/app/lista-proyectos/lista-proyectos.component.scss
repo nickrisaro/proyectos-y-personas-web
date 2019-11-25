@@ -1,0 +1,43 @@
+.contenedor-proyectos {
+  display: flex;
+}
+
+.proyectos-card {
+  max-width: 300px;
+  min-width: 175px;
+  margin: 10px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.proyectos {
+  height: 100px;
+  overflow: scroll;
+  scrollbar-width: none;
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.proyectos li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  margin: 0.5em;
+  padding: 0.3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.proyectos li:hover {
+  color: #607d8b;
+  background-color: #ddd;
+  left: 0.1em;
+}
+.proyectos li.selected {
+  background-color: #cfd8dc;
+  color: white;
+}
+.proyectos li.selected:hover {
+  background-color: #bbd8dc;
+  color: white;
+}
