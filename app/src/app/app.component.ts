@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Persona } from './persona';
+import { PersonasService } from './personas.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +12,12 @@ export class AppComponent {
 
   mostrarPersonas = false;
   mostrarProyectos = false;
+
+  constructor(private personaService : PersonasService) {}
+
+  nuevaPersona(): void {
+    const persona = new Persona();
+    persona.nueva = true;
+    this.personaService.personaSeleccionadaParaEdicion(persona);
+  }
 }

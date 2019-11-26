@@ -4,6 +4,11 @@ export class Persona {
     hardSkill: number;
     softSkill: number;
     seniority: number;
+    nueva: boolean;
+
+    constructor(){
+        this.nueva = false;
+    }
 
     deserialize(input: any): this {
         Object.assign(this, input);

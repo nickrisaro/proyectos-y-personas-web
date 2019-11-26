@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Persona } from '../persona';
+import { PersonasService } from '../personas.service';
 
 @Component({
   selector: 'app-detalle-persona',
@@ -9,9 +10,12 @@ import { Persona } from '../persona';
 export class DetallePersonaComponent implements OnInit {
   @Input() persona: Persona;
 
-  constructor() { }
+  constructor(private personaService: PersonasService) { }
 
   ngOnInit() {
   }
 
+  editar() {
+    this.personaService.personaSeleccionadaParaEdicion(this.persona);
+  }
 }
