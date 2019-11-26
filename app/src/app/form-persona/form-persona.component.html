@@ -1,0 +1,41 @@
+<mat-card *ngIf="editarPersona" class="edicion-persona-card">
+    <mat-card-title class="nombre-persona">Datos de la persona</mat-card-title>
+    <mat-card-content>
+
+        <mat-form-field>
+            <input matInput placeholder="Nombre" [(ngModel)]="persona.nombre">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="Sueldo" [(ngModel)]="persona.sueldo">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select type="number" placeholder="Seniority" [(ngModel)]="persona.seniority">
+                <mat-option [value]="1">Junior</mat-option>
+                <mat-option [value]="2">SemiSenior</mat-option>
+                <mat-option [value]="3">Senior</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Habilidad dura" [(ngModel)]="persona.hardSkill">
+                <mat-option [value]="0">Desarrollo</mat-option>
+                <mat-option [value]="1">Diseño</mat-option>
+                <mat-option [value]="2">Operaciones</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Habilidad blanda" [(ngModel)]="persona.softSkill">
+                <mat-option [value]="0">Negociación</mat-option>
+                <mat-option [value]="1">Mentoreo</mat-option>
+                <mat-option [value]="2">Investigación</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="onCancel()">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+    </mat-card-actions>
+</mat-card>

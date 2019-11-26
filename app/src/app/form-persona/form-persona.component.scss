@@ -1,0 +1,11 @@
+.edicion-persona-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    min-width: 175px;
+    margin: 10px;
+  }
+  
+  .edicion-persona-card > * {
+    width: 100%;
+  }
