@@ -11,11 +11,16 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatFormFieldModule,
+  MatOptionModule,
+  MatSelectModule
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { PersonasService } from './personas.service';
 import { ProyectosService } from './proyectos.service';
+import { FormPersonaComponent } from './form-persona/form-persona.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -24,6 +29,10 @@ describe('AppComponent', () => {
         MatToolbarModule,
         MatCardModule,
         MatIconModule,
+        MatFormFieldModule,
+        MatOptionModule,
+        MatSelectModule,
+        FormsModule,
         RouterTestingModule,
         HttpClientTestingModule
       ],
@@ -34,6 +43,7 @@ describe('AppComponent', () => {
         DetallePersonaComponent,
         ListaProyectosComponent,
         DetalleProyectoComponent,
+        FormPersonaComponent,
         AppComponent
       ],
     }).compileComponents();
