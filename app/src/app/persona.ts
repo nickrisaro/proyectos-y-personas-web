@@ -1,14 +1,12 @@
 export class Persona {
+    id: number;
     nombre: string;
     sueldo: number;
     hardSkill: number;
     softSkill: number;
     seniority: number;
-    nueva: boolean;
 
-    constructor(){
-        this.nueva = false;
-    }
+    constructor(){}
 
     deserialize(input: any): this {
         Object.assign(this, input);
@@ -37,5 +35,9 @@ export class Persona {
             case 2: return "SemiSenior";
             case 3: return "Senior";
         }
+    }
+
+    public esNueva(): boolean {
+        return this.id == undefined;
     }
 }

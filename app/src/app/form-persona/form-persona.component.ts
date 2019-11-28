@@ -27,7 +27,6 @@ export class FormPersonaComponent implements OnInit {
 
   onCancel(): void {
     this.persona = new Persona();
-    this.persona.nueva = true;
     this.editarPersona = false;
   }
 }

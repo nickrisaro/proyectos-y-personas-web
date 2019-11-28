@@ -28,11 +28,11 @@ export class PersonasService {
   }
 
   guardar(persona: Persona) : Observable<any> {
-    if (persona.nueva) {
+    if (persona.esNueva()) {
       const personas : Persona[] = [persona];
       return this.http.post(this.personasUrl, personas, this.httpOptions);
     } else {
-      const url = `${this.personaUrl}/0`;
+      const url = `${this.personaUrl}/${persona.id}`;
       return this.http.put(url, persona, this.httpOptions);
     }
   }

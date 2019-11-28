@@ -17,7 +17,6 @@ export class AppComponent {
 
   nuevaPersona(): void {
     const persona = new Persona();
-    persona.nueva = true;
     this.personaService.personaSeleccionadaParaEdicion(persona);
   }
 }
