@@ -9,7 +9,6 @@ import { PersonasService } from '../personas.service';
 })
 export class FormPersonaComponent implements OnInit {
 
-  editarPersona: boolean;
   persona: Persona;
 
   constructor(private personaService: PersonasService) { }
@@ -17,7 +16,6 @@ export class FormPersonaComponent implements OnInit {
   ngOnInit() {
     this.personaService.editarPersona.subscribe(persona => {
       this.persona = persona;
-      this.editarPersona = true;
     });
   }
 
@@ -26,7 +24,6 @@ export class FormPersonaComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.persona = new Persona();
-    this.editarPersona = false;
+    this.persona = null;
   }
 }

@@ -1,4 +1,4 @@
-<mat-card *ngIf="editarPersona" class="edicion-persona-card">
+<mat-card *ngIf="persona" class="edicion-persona-card">
     <mat-card-title class="nombre-persona">Datos de la persona</mat-card-title>
     <mat-card-content>
 
@@ -35,7 +35,7 @@
         </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button (click)="onCancel()">Cancelar</button>
-        <button mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+        <button id="btn-cancelar" mat-raised-button (click)="onCancel()">Cancelar</button>
+        <button id="btn-guardar" mat-raised-button color="primary" (click)="onSave()">Guardar</button>
     </mat-card-actions>
 </mat-card>
