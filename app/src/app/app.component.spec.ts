@@ -15,7 +15,9 @@ import {
   MatFormFieldModule,
   MatOptionModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  MatChipsModule,
+  MatExpansionModule
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { PersonasService } from './personas.service';
@@ -39,6 +41,8 @@ describe('AppComponent', () => {
         MatOptionModule,
         MatSelectModule,
         MatInputModule,
+        MatChipsModule,
+        MatExpansionModule,
         BrowserAnimationsModule,
         FormsModule,
         RouterTestingModule,

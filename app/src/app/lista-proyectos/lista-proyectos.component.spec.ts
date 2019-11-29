@@ -4,13 +4,14 @@ import { ListaProyectosComponent } from './lista-proyectos.component';
 import { DetalleProyectoComponent } from '../detalle-proyecto/detalle-proyecto.component';
 
 import {
-  MatCardModule, MatIconModule
+  MatCardModule, MatIconModule, MatChipsModule, MatExpansionModule
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { ProyectosService } from '../proyectos.service';
 import { Proyecto } from '../proyecto';
 import { of } from 'rxjs';
 import PersonasRequeridas from '../personasRequeridas';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 class MockProyectoService extends ProyectosService {
   getProyectos() {
@@ -42,6 +43,9 @@ describe('ListaProyectosComponent', () => {
       imports: [
         MatCardModule,
         MatIconModule,
+        MatChipsModule,
+        MatExpansionModule,
+        BrowserAnimationsModule,
         HttpClientTestingModule
       ],
       providers: [ProyectosService],

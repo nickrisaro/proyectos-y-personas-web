@@ -1,4 +1,5 @@
-import PersonasRequeridas from './personasRequeridas';
+import { PersonasRequeridas } from './personasRequeridas';
+import { Persona } from './persona';
 
 export class Proyecto {
 
@@ -6,6 +7,7 @@ export class Proyecto {
     nombre: string;
     presupuesto: number;
     personasRequeridas: PersonasRequeridas;
+    personasAsignadas: Persona[];
 
     constructor() {
         this.personasRequeridas = new PersonasRequeridas();

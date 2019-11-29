@@ -4,10 +4,11 @@ import { DetalleProyectoComponent } from './detalle-proyecto.component';
 import { Proyecto } from '../proyecto';
 
 import {
-  MatCardModule, MatIconModule
+  MatCardModule, MatIconModule, MatChipsModule, MatExpansionModule
 } from '@angular/material';
 import { ProyectosService } from '../proyectos.service';
 import PersonasRequeridas from '../personasRequeridas';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 class MockProyectosService extends ProyectosService {
   proyectoSeleccionada : Proyecto;
@@ -28,7 +29,10 @@ describe('DetalleProyectoComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         MatCardModule,
-        MatIconModule
+        MatIconModule,
+        MatChipsModule,
+        MatExpansionModule,
+        BrowserAnimationsModule
       ],
       providers: [ProyectosService],
       declarations: [ DetalleProyectoComponent ]
