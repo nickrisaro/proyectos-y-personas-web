@@ -1,5 +1,14 @@
-<mat-card class="solucion-card">
-    <mat-card-title>Solución generada</mat-card-title>
+<mat-card *ngFor="let resumen of solucion" class="solucion-card">
+    <mat-card-title>Solución para "{{resumen.Nombre}}"</mat-card-title>
     <mat-card-content>
+        <p><b>Presupuesto:</b> ${{resumen.Presupuesto}} vs <b>Sueldos:</b> ${{resumen.Sueldos}}</p>
+        <h3>Hard Skills</h3>
+        <p><b>Desarrollo requeridas</b> {{resumen.PersonasRequeridas[0]}} vs <b>asignadas</b> {{resumen.HardSkills[0]}}</p>
+        <p><b>Diseño requeridas</b> {{resumen.PersonasRequeridas[1]}} vs <b>asignadas</b> {{resumen.HardSkills[1]}}</p>
+        <p><b>Operaciones requeridas</b> {{resumen.PersonasRequeridas[2]}} vs <b>asignadas</b> {{resumen.HardSkills[2]}}</p>
+        <h3>Soft Skills</h3>
+        <p><b>Negociación</b> {{resumen.SoftSkills[0]}} <b>Mentoreo:</b> {{resumen.SoftSkills[1]}} <b>Investigación:</b> {{resumen.SoftSkills[2]}}</p>
+        <h3>Seniorities</h3>
+        <p><b>Juior</b> {{resumen.Seniorities[1]}} <b>Semi:</b> {{resumen.Seniorities[2]}} <b>Senior:</b> {{resumen.Seniorities[3]}}</p>
     </mat-card-content>
 </mat-card>

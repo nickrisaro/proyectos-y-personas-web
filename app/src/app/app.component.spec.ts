@@ -25,8 +25,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 import { SolucionComponent } from './solucion/solucion.component';
+import { SolucionesService } from './soluciones.service';
 
 describe('AppComponent', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -42,7 +44,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         HttpClientTestingModule
       ],
-      providers: [PersonasService, ProyectosService],
+      providers: [PersonasService, ProyectosService, SolucionesService],
       declarations: [
         ResumenEmpresaComponent,
         ListaPersonasComponent,
@@ -55,6 +57,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+
   }));
 
   it('should create the app', () => {
@@ -129,22 +132,6 @@ describe('AppComponent', () => {
 
     const compiled = fixtureForm.debugElement.nativeElement;
     expect(compiled.querySelector('.edicion-proyecto-card')).toBeTruthy();
-
-  });
-
-  it(`should show solution on click`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const fixtureForm = TestBed.createComponent(SolucionComponent);
-
-    fixture.detectChanges();
-    fixtureForm.detectChanges();
-    const item= fixture.debugElement.query(By.css('#boton-solucion'));
-    item.nativeElement.click();
-    fixture.detectChanges();
-    fixtureForm.detectChanges();
-
-    const compiled = fixtureForm.debugElement.nativeElement;
-    expect(compiled.querySelector('.solucion-card')).toBeTruthy();
 
   });
 });

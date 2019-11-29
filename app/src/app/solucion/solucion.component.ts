@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumenProyecto } from '../resumenProyecto'
+import { SolucionesService } from '../soluciones.service';
 
 @Component({
   selector: 'app-solucion',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolucionComponent implements OnInit {
 
-  constructor() { }
+  solucion: ResumenProyecto[];
+
+  constructor(private solucionService : SolucionesService) { }
 
   ngOnInit() {
+    this.solucionService.solucionGenerada.subscribe((solucion) => {this.solucion = solucion});
   }
 
 }
