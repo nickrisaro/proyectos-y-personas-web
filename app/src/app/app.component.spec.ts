@@ -14,13 +14,15 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatOptionModule,
-  MatSelectModule
+  MatSelectModule,
+  MatInputModule
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { PersonasService } from './personas.service';
 import { ProyectosService } from './proyectos.service';
 import { FormPersonaComponent } from './form-persona/form-persona.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -32,6 +34,8 @@ describe('AppComponent', () => {
         MatFormFieldModule,
         MatOptionModule,
         MatSelectModule,
+        MatInputModule,
+        BrowserAnimationsModule,
         FormsModule,
         RouterTestingModule,
         HttpClientTestingModule
@@ -89,6 +93,22 @@ describe('AppComponent', () => {
 
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.proyectos-card')).toBeTruthy();
+
+  });
+
+  it(`should show form to create person on click`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const fixtureForm = TestBed.createComponent(FormPersonaComponent);
+
+    fixture.detectChanges();
+    fixtureForm.detectChanges();
+    const item= fixture.debugElement.query(By.css('.boton-alta'));
+    item.nativeElement.click();
+    fixture.detectChanges();
+    fixtureForm.detectChanges();
+
+    const compiled = fixtureForm.debugElement.nativeElement;
+    expect(compiled.querySelector('.edicion-persona-card')).toBeTruthy();
 
   });
 });
