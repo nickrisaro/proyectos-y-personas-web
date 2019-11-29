@@ -13,6 +13,7 @@ import { ListaProyectosComponent } from './lista-proyectos/lista-proyectos.compo
 import { DetalleProyectoComponent } from './detalle-proyecto/detalle-proyecto.component';
 import { FormPersonaComponent } from './form-persona/form-persona.component';
 import { FormsModule } from '@angular/forms';
+import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     DetallePersonaComponent,
     ListaProyectosComponent,
     DetalleProyectoComponent,
-    FormPersonaComponent
+    FormPersonaComponent,
+    FormProyectoComponent
   ],
   imports: [
     BrowserModule,

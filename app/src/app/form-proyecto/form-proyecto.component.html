@@ -1,0 +1,29 @@
+<mat-card *ngIf="proyecto" class="edicion-proyecto-card">
+    <mat-card-title class="nombre-proyecto">Datos del proyecto</mat-card-title>
+    <mat-card-content>
+
+        <mat-form-field>
+            <input matInput placeholder="Nombre" [(ngModel)]="proyecto.nombre">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="Presupuesto" [(ngModel)]="proyecto.presupuesto">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="Personas desarrollo" [(ngModel)]="proyecto.personasRequeridas[0]">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="Personas diseño" [(ngModel)]="proyecto.personasRequeridas[1]">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="Personas operaciones" [(ngModel)]="proyecto.personasRequeridas[2]">
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button id="btn-cancelar" mat-raised-button (click)="onCancel()">Cancelar</button>
+        <button id="btn-guardar" mat-raised-button color="primary" (click)="onSave()">Guardar</button>
+    </mat-card-actions>
+</mat-card>

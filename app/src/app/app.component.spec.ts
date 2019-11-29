@@ -23,6 +23,7 @@ import { ProyectosService } from './proyectos.service';
 import { FormPersonaComponent } from './form-persona/form-persona.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -48,6 +49,7 @@ describe('AppComponent', () => {
         ListaProyectosComponent,
         DetalleProyectoComponent,
         FormPersonaComponent,
+        FormProyectoComponent,
         AppComponent
       ],
     }).compileComponents();
@@ -102,13 +104,29 @@ describe('AppComponent', () => {
 
     fixture.detectChanges();
     fixtureForm.detectChanges();
-    const item= fixture.debugElement.query(By.css('.boton-alta'));
+    const item= fixture.debugElement.query(By.css('#boton-alta-persona'));
     item.nativeElement.click();
     fixture.detectChanges();
     fixtureForm.detectChanges();
 
     const compiled = fixtureForm.debugElement.nativeElement;
     expect(compiled.querySelector('.edicion-persona-card')).toBeTruthy();
+
+  });
+
+  it(`should show form to create project on click`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const fixtureForm = TestBed.createComponent(FormProyectoComponent);
+
+    fixture.detectChanges();
+    fixtureForm.detectChanges();
+    const item= fixture.debugElement.query(By.css('#boton-alta-proyecto'));
+    item.nativeElement.click();
+    fixture.detectChanges();
+    fixtureForm.detectChanges();
+
+    const compiled = fixtureForm.debugElement.nativeElement;
+    expect(compiled.querySelector('.edicion-proyecto-card')).toBeTruthy();
 
   });
 });

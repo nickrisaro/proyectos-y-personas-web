@@ -1,9 +1,9 @@
 <mat-card *ngIf="proyecto" class="proyecto-card">
-        <mat-card-title>{{proyecto.nombre}}</mat-card-title>
+        <mat-card-title>{{proyecto.nombre}} <mat-icon (click)="editar()">edit</mat-icon></mat-card-title>
         <mat-card-content>
             <p><b>Presupuesto:</b> ${{proyecto.presupuesto}}</p>
-            <p><b>Desarrollo:</b> {{proyecto.personasDesarrolloNecesarias()}} personas(s)</p>
-            <p><b>Diseño:</b> {{proyecto.personasDisenioNecesarias()}} personas(s)</p>
-            <p><b>Operaciones:</b> {{proyecto.personasOperacionesNecesarias()}} personas(s)</p>
+            <p><b>Desarrollo:</b> {{proyecto.personasRequeridas[0]}} personas(s)</p>
+            <p><b>Diseño:</b> {{proyecto.personasRequeridas[1]}} personas(s)</p>
+            <p><b>Operaciones:</b> {{proyecto.personasRequeridas[2]}} personas(s)</p>
         </mat-card-content>
     </mat-card>

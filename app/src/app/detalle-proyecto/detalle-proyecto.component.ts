@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Proyecto } from '../proyecto';
+import { ProyectosService } from '../proyectos.service';
 
 @Component({
   selector: 'app-detalle-proyecto',
@@ -9,9 +10,12 @@ import { Proyecto } from '../proyecto';
 export class DetalleProyectoComponent implements OnInit {
   @Input() proyecto: Proyecto;
 
-  constructor() { }
+  constructor(private proyectoService: ProyectosService) { }
 
   ngOnInit() {
   }
 
+  editar() {
+    this.proyectoService.proyectoSeleccionadaParaEdicion(this.proyecto);
+  }
 }

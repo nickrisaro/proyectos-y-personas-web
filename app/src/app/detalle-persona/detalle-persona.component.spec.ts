@@ -41,7 +41,6 @@ describe('DetallePersonaComponent', () => {
       { set: { providers: [{ provide: PersonasService, useValue: personasService }] } }
     );
 
-
     fixture = TestBed.createComponent(DetallePersonaComponent);
     component = fixture.componentInstance;
     component.persona = new Persona();

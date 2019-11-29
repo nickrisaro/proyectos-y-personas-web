@@ -10,18 +10,18 @@ import { By } from '@angular/platform-browser';
 import { ProyectosService } from '../proyectos.service';
 import { Proyecto } from '../proyecto';
 import { of } from 'rxjs';
+import PersonasRequeridas from '../personasRequeridas';
 
 class MockProyectoService extends ProyectosService {
   getProyectos() {
-    const personasRequeridas: Record<string, number> = {
-      0: 1,
-      1: 2,
-      2: 3
-    }
+    const personasRequeridas: PersonasRequeridas = new PersonasRequeridas();
+    personasRequeridas[0] = 1,
+    personasRequeridas[1] = 2,
+    personasRequeridas[2] = 3
+
     const proyecto = new Proyecto();
     proyecto.nombre = "Banco 1";
     proyecto.presupuesto = 75000;
-    proyecto.personasRequeridas = personasRequeridas;
     const proyecto2 = new Proyecto();
     proyecto2.nombre = "Banco 2";
     proyecto2.presupuesto = 75000;

@@ -6,11 +6,23 @@ import { Proyecto } from '../proyecto';
 import {
   MatCardModule, MatIconModule
 } from '@angular/material';
+import { ProyectosService } from '../proyectos.service';
+import PersonasRequeridas from '../personasRequeridas';
 
+class MockProyectosService extends ProyectosService {
+  proyectoSeleccionada : Proyecto;
+  constructor(){
+    super(null);
+  }
+  proyectoSeleccionadaParaEdicion(proyecto : Proyecto) {
+    this.proyectoSeleccionada = proyecto;
+  }
+}
 
 describe('DetalleProyectoComponent', () => {
   let component: DetalleProyectoComponent;
   let fixture: ComponentFixture<DetalleProyectoComponent>;
+  let proyectosService : MockProyectosService = new MockProyectosService();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,20 +30,26 @@ describe('DetalleProyectoComponent', () => {
         MatCardModule,
         MatIconModule
       ],
+      providers: [ProyectosService],
       declarations: [ DetalleProyectoComponent ]
     })
     .compileComponents();
+
+    TestBed.overrideComponent(
+      DetalleProyectoComponent,
+      { set: { providers: [{ provide: ProyectosService, useValue: proyectosService }] } }
+    );
+
+    fixture = TestBed.createComponent(DetalleProyectoComponent);
   }));
 
   beforeEach(() => {
 
-    const personasRequeridas: Record<string, number> = {
-      0: 1,
-      1: 2,
-      2: 3
-    }
+    const personasRequeridas: PersonasRequeridas = new PersonasRequeridas();
+    personasRequeridas[0] = 1,
+    personasRequeridas[1] = 2,
+    personasRequeridas[2] = 3
 
-    fixture = TestBed.createComponent(DetalleProyectoComponent);
     component = fixture.componentInstance;
     component.proyecto = new Proyecto();
     component.proyecto.nombre = "Banco";
@@ -47,5 +65,11 @@ describe('DetalleProyectoComponent', () => {
   it(`should show the project name`, () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.mat-card-title').textContent).toContain('Banco');
+  });
+
+  it(`should emit edit event`, () => {
+    const compiled = fixture.debugElement.nativeElement;
+    compiled.querySelector('.mat-icon').click();
+    expect(proyectosService.proyectoSeleccionada).toBe(component.proyecto);
   });
 });
