@@ -24,6 +24,7 @@ import { FormPersonaComponent } from './form-persona/form-persona.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
+import { SolucionComponent } from './solucion/solucion.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -50,6 +51,7 @@ describe('AppComponent', () => {
         DetalleProyectoComponent,
         FormPersonaComponent,
         FormProyectoComponent,
+        SolucionComponent,
         AppComponent
       ],
     }).compileComponents();
@@ -127,6 +129,22 @@ describe('AppComponent', () => {
 
     const compiled = fixtureForm.debugElement.nativeElement;
     expect(compiled.querySelector('.edicion-proyecto-card')).toBeTruthy();
+
+  });
+
+  it(`should show solution on click`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const fixtureForm = TestBed.createComponent(SolucionComponent);
+
+    fixture.detectChanges();
+    fixtureForm.detectChanges();
+    const item= fixture.debugElement.query(By.css('#boton-solucion'));
+    item.nativeElement.click();
+    fixture.detectChanges();
+    fixtureForm.detectChanges();
+
+    const compiled = fixtureForm.debugElement.nativeElement;
+    expect(compiled.querySelector('.solucion-card')).toBeTruthy();
 
   });
 });

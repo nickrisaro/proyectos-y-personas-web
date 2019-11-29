@@ -14,6 +14,7 @@ import { DetalleProyectoComponent } from './detalle-proyecto/detalle-proyecto.co
 import { FormPersonaComponent } from './form-persona/form-persona.component';
 import { FormsModule } from '@angular/forms';
 import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
+import { SolucionComponent } from './solucion/solucion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
     ListaProyectosComponent,
     DetalleProyectoComponent,
     FormPersonaComponent,
-    FormProyectoComponent
+    FormProyectoComponent,
+    SolucionComponent
   ],
   imports: [
     BrowserModule,

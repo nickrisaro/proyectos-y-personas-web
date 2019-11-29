@@ -4,6 +4,7 @@ import { PersonasRequeridas } from './personasRequeridas';
 import { PersonasService } from './personas.service';
 import { Proyecto } from './proyecto';
 import { ProyectosService } from './proyectos.service';
+import { SolucionesService } from './soluciones.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   mostrarPersonas = false;
   mostrarProyectos = false;
 
-  constructor(private personaService : PersonasService, private proyectoService : ProyectosService) {}
+  constructor(private personaService : PersonasService, private proyectoService : ProyectosService, private solucionesService: SolucionesService) {}
 
   nuevaPersona(): void {
     const persona = new Persona();
@@ -26,5 +27,9 @@ export class AppComponent {
   nuevoProyecto(): void {
     const proyecto = new Proyecto();
     this.proyectoService.proyectoSeleccionadaParaEdicion(proyecto);
+  }
+
+  solucionar(): void {
+    this.solucionesService.solucionar();
   }
 }
