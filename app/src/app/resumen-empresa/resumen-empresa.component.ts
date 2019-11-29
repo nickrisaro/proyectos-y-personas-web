@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Resumen} from '../resumen'
+import { ProyectosService } from '../proyectos.service';
+import { PersonasService } from '../personas.service';
 
 @Component({
   selector: 'app-resumen-empresa',
@@ -15,13 +17,22 @@ export class ResumenEmpresaComponent implements OnInit {
   @Output() mostrarProyectosChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   resumen: Resumen = {
-    personas: 2,
-    proyectos: 2
+    personas: 0,
+    proyectos: 0
+  }
+  constructor(private proyectoService: ProyectosService, private personaService: PersonasService) { }
+
+  ngOnInit() {;
+    this.getproyectos();
+    this.getPersonas();
   }
 
-  constructor() { }
+  getproyectos() : void {
+    this.proyectoService.getProyectos().subscribe(proyectos => this.resumen.proyectos = proyectos.length);
+  }
 
-  ngOnInit() {
+  getPersonas() : void {
+    this.personaService.getPersonas().subscribe(personas => this.resumen.personas = personas.length);
   }
 
   togglePersonas(): void {
