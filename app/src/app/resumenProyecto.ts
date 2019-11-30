@@ -10,10 +10,4 @@ export class ResumenProyecto {
     SoftSkills: Record<string, number>;
     Seniorities: Record<string, number>;
 
-
-    deserialize(input: any): this {
-        Object.assign(this, input);
-        return this;
-    }
-
 }
