@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ResumenProyecto } from '../resumenProyecto'
 import { SolucionesService } from '../soluciones.service';
 
@@ -9,12 +9,20 @@ import { SolucionesService } from '../soluciones.service';
 })
 export class SolucionComponent implements OnInit {
 
-  solucion: ResumenProyecto[];
+  @Input() solucion: ResumenProyecto[];
+
+  @Input() paraResumen: boolean
 
   constructor(private solucionService : SolucionesService) { }
 
   ngOnInit() {
-    this.solucionService.solucionGenerada.subscribe((solucion) => {this.solucion = solucion});
+    if (!this.paraResumen) {
+      this.solucionService.solucionGenerada.subscribe((solucion) => {this.solucion = solucion});
+    }
+  }
+
+  cerrar() {
+    this.solucion = null;
   }
 
 }
