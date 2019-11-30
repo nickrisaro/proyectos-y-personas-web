@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 import { SolucionComponent } from './solucion/solucion.component';
 import { SolucionesService } from './soluciones.service';
+import { CompararSolucionesComponent } from './comparar-soluciones/comparar-soluciones.component';
 
 describe('AppComponent', () => {
 
@@ -58,6 +59,7 @@ describe('AppComponent', () => {
         FormPersonaComponent,
         FormProyectoComponent,
         SolucionComponent,
+        CompararSolucionesComponent,
         AppComponent
       ],
     }).compileComponents();

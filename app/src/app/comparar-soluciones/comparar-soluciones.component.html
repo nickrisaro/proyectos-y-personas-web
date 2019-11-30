@@ -1,0 +1,8 @@
+<div class="contenedor-soluciones">
+    <div *ngFor="let solucion of soluciones">
+        <app-solucion [solucion]="solucion" [paraResumen]="true"></app-solucion>
+    </div>
+</div>
+<button mat-raised-button (click)="buscarSoluciones()" id="boton-comparar" class="boton-comparar">
+    <mat-icon>sync_alt</mat-icon> Comparar soluciones
+</button>

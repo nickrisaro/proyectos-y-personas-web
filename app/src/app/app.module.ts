@@ -15,6 +15,7 @@ import { FormPersonaComponent } from './form-persona/form-persona.component';
 import { FormsModule } from '@angular/forms';
 import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 import { SolucionComponent } from './solucion/solucion.component';
+import { CompararSolucionesComponent } from './comparar-soluciones/comparar-soluciones.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SolucionComponent } from './solucion/solucion.component';
     DetalleProyectoComponent,
     FormPersonaComponent,
     FormProyectoComponent,
-    SolucionComponent
+    SolucionComponent,
+    CompararSolucionesComponent
   ],
   imports: [
     BrowserModule,

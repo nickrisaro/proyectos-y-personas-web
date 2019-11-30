@@ -1,5 +1,5 @@
 <mat-card *ngIf="solucion" class="solucion-card">
-    <mat-card-title>Solución <mat-icon (click)="cerrar()" class="boton-cerrar">close</mat-icon></mat-card-title>
+    <mat-card-title>Solución <mat-icon *ngIf="!paraResumen" (click)="cerrar()" class="boton-cerrar">close</mat-icon></mat-card-title>
     <mat-card-content>
         <mat-accordion>
             <mat-expansion-panel *ngFor="let resumen of solucion">
