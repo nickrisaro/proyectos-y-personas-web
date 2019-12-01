@@ -17,7 +17,8 @@ import {
   MatSelectModule,
   MatInputModule,
   MatChipsModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { PersonasService } from './personas.service';
@@ -44,6 +45,7 @@ describe('AppComponent', () => {
         MatInputModule,
         MatChipsModule,
         MatExpansionModule,
+        MatProgressSpinnerModule,
         BrowserAnimationsModule,
         FormsModule,
         RouterTestingModule,

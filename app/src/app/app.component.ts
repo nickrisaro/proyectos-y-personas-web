@@ -16,6 +16,7 @@ export class AppComponent {
 
   mostrarPersonas = false;
   mostrarProyectos = false;
+  cargando = false;
 
   constructor(private personaService : PersonasService, private proyectoService : ProyectosService, private solucionesService: SolucionesService) {}
 
@@ -30,6 +31,7 @@ export class AppComponent {
   }
 
   solucionar(): void {
-    this.solucionesService.solucionar();
+    this.cargando = true;
+    this.solucionesService.solucionar().subscribe((solucion) => {this.solucionesService.solucionGenerada.emit(solucion); this.cargando = false});
   }
 }

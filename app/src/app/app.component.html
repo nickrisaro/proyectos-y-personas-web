@@ -31,8 +31,8 @@
 
     <div>
       <app-solucion></app-solucion>
-      <button mat-raised-button (click)="solucionar()" id="boton-solucion" class="boton-alta">
-        <mat-icon>sync_alt</mat-icon> Asignar personas a proyectos
+      <button mat-raised-button [disabled]="cargando" (click)="solucionar()" id="boton-solucion" class="boton-alta">
+        <div class="inner-comparar"><mat-icon>sync_alt</mat-icon> Asignar personas a proyectos <span class="spinner" *ngIf="cargando"><mat-spinner diameter="15"></mat-spinner></span></div>
       </button>
     </div>
   </div>

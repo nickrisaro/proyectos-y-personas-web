@@ -37,11 +37,10 @@ describe('SolucionesService', () => {
 
     const solucion = [resumenProyecto];
 
-    service.solucionGenerada.subscribe(
+    service.solucionar().subscribe(
       mensaje => expect(mensaje).toEqual(solucion, 'should return solution'),
       fail
     );
-    service.solucionar()
 
     const req = httpTestingController.expectOne(service.solucionesUrl);
     expect(req.request.method).toEqual('POST');

@@ -9,7 +9,7 @@ import { SolucionesService } from '../soluciones.service';
 })
 export class CompararSolucionesComponent implements OnInit {
 
-  soluciones: ResumenProyecto[][]
+  soluciones: ResumenProyecto[][];
 
   constructor(private solucionesService : SolucionesService) { }
 

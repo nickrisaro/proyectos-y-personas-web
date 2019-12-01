@@ -18,8 +18,9 @@ export class SolucionesService {
 
   constructor(private http: HttpClient) { }
 
-  solucionar()  {
-    this.http.post(this.solucionesUrl, null, this.httpOptions).subscribe((solucion) => {this.solucionGenerada.emit(solucion)});
+  solucionar() : Observable<any> {
+    let observable = this.http.post(this.solucionesUrl, null, this.httpOptions);
+    return observable;
   }
 
   buscarSoluciones() : Observable<any> {
